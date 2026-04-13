@@ -22,6 +22,34 @@ overrides:
 importers:
 
   .:
+    devDependencies:
+      npm-run-all2:
+        specifier: ^8.0.4
+        version: 8.0.4
+
+  apps/api:
+    dependencies:
+      '@azure/functions':
+        specifier: ^4.12.0
+        version: 4.12.0
+      '@marplex/hono-azurefunc-adapter':
+        specifier: ^1.0.1
+        version: 1.0.1
+      hono:
+        specifier: ^4.12.12
+        version: 4.12.12
+    devDependencies:
+      '@types/node':
+        specifier: ^24.12.2
+        version: 24.12.2
+      rolldown:
+        specifier: 1.0.0-rc.15
+        version: 1.0.0-rc.15
+      typescript:
+        specifier: ~6.0.2
+        version: 6.0.2
+
+  apps/web:
     dependencies:
       '@vee-validate/zod':
         specifier: ^4.15.1
@@ -153,28 +181,6 @@ importers:
       vue-tsc:
         specifier: ^3.2.6
         version: 3.2.6(typescript@6.0.2)
-
-  api:
-    dependencies:
-      '@azure/functions':
-        specifier: ^4.12.0
-        version: 4.12.0
-      '@marplex/hono-azurefunc-adapter':
-        specifier: ^1.0.1
-        version: 1.0.1
-      hono:
-        specifier: ^4.12.12
-        version: 4.12.12
-    devDependencies:
-      '@types/node':
-        specifier: ^24.12.2
-        version: 24.12.2
-      rolldown:
-        specifier: 1.0.0-rc.15
-        version: 1.0.0-rc.15
-      typescript:
-        specifier: ~6.0.2
-        version: 6.0.2
 
 packages:
 
