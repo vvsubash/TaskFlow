@@ -29,6 +29,9 @@ importers:
       '@vueuse/core':
         specifier: ^14.2.1
         version: 14.2.1(vue@3.6.0-beta.10(typescript@6.0.2))
+      hono:
+        specifier: ^4.12.12
+        version: 4.12.12
       pinia:
         specifier: ^3.0.4
         version: 3.0.4(typescript@6.0.2)(vue@3.6.0-beta.10(typescript@6.0.2))
@@ -151,6 +154,28 @@ importers:
         specifier: ^3.2.6
         version: 3.2.6(typescript@6.0.2)
 
+  api:
+    dependencies:
+      '@azure/functions':
+        specifier: ^4.12.0
+        version: 4.12.0
+      '@marplex/hono-azurefunc-adapter':
+        specifier: ^1.0.1
+        version: 1.0.1
+      hono:
+        specifier: ^4.12.12
+        version: 4.12.12
+    devDependencies:
+      '@types/node':
+        specifier: ^24.12.2
+        version: 24.12.2
+      rolldown:
+        specifier: 1.0.0-rc.15
+        version: 1.0.0-rc.15
+      typescript:
+        specifier: ~6.0.2
+        version: 6.0.2
+
 packages:
 
   '@adobe/css-tools@4.4.4':
@@ -166,6 +191,14 @@ packages:
 
   '@asamuzakjp/nwsapi@2.3.9':
     resolution: {integrity: sha512-n8GuYSrI9bF7FFZ/SjhwevlHc8xaVlb/7HmHelnc/PZXBD2ZR49NnN9sMMuDdEGPeeRQ5d0hqlSlEpgCX3Wl0Q==}
+
+  '@azure/functions-extensions-base@0.2.0':
+    resolution: {integrity: sha512-ncCkHBNQYJa93dBIh+toH0v1iSgCzSo9tr94s6SMBe7DPWREkaWh8cq33A5P4rPSFX1g5W+3SPvIzDr/6/VOWQ==}
+    engines: {node: '>=18.0'}
+
+  '@azure/functions@4.12.0':
+    resolution: {integrity: sha512-aHBSvEDHOUhLhkivPiotoYfE6WPZdutv9OnXEkSqYtyWjbf1k/DoQ/Z9swqIbyaBSvh2xOR8ARKj5CR/2jqEOw==}
+    engines: {node: '>=20.0'}
 
   '@babel/code-frame@7.29.0':
     resolution: {integrity: sha512-9NhCeYjq9+3uxgdtp20LSiJXJvN0FeCtNGpJxuMFZ1Kv3cWUNb6DOhJwUvcVCzKGR66cw4njwM6hrJLqgOwbcw==}
@@ -603,6 +636,9 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@marplex/hono-azurefunc-adapter@1.0.1':
+    resolution: {integrity: sha512-2hW13KsHj7SYLJ7sjfkenPVLmJZrDnHwhTmN+1KtS8nou7MhSqNNdnd3eIMSA7O6rk7d+tupWGso0Tz69nIbnw==}
 
   '@mdx-js/react@3.1.1':
     resolution: {integrity: sha512-f++rKLQgUVYDAtECQ6fn/is15GkEH9+nZPM3MS0RcxVqoTfawHvDlSCH7JbMhAM6uJ32v3eXLvLmLvjGu7PTQw==}
@@ -1645,6 +1681,10 @@ packages:
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
 
+  cookie@0.7.2:
+    resolution: {integrity: sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==}
+    engines: {node: '>= 0.6'}
+
   copy-anything@4.0.5:
     resolution: {integrity: sha512-7Vv6asjS4gMOuILabD3l739tsaxFQmC+a7pLZm02zyvs8p977bL3zEgq3yDk5rn9B0PbYgIv++jmHcuUab4RhA==}
     engines: {node: '>=18'}
@@ -2006,6 +2046,10 @@ packages:
   he@1.2.0:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
+
+  hono@4.12.12:
+    resolution: {integrity: sha512-p1JfQMKaceuCbpJKAPKVqyqviZdS0eUxH9v82oWo1kb9xjQ5wA6iP3FNVAPDFlz5/p7d45lO+BpSk1tuSZMF4Q==}
+    engines: {node: '>=16.9.0'}
 
   hookable@5.5.3:
     resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
@@ -3177,6 +3221,13 @@ snapshots:
 
   '@asamuzakjp/nwsapi@2.3.9': {}
 
+  '@azure/functions-extensions-base@0.2.0': {}
+
+  '@azure/functions@4.12.0':
+    dependencies:
+      '@azure/functions-extensions-base': 0.2.0
+      cookie: 0.7.2
+
   '@babel/code-frame@7.29.0':
     dependencies:
       '@babel/helper-validator-identifier': 7.28.5
@@ -3578,6 +3629,8 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@marplex/hono-azurefunc-adapter@1.0.1': {}
 
   '@mdx-js/react@3.1.1(@types/react@19.2.14)(react@19.2.5)':
     dependencies:
@@ -4582,6 +4635,8 @@ snapshots:
 
   convert-source-map@2.0.0: {}
 
+  cookie@0.7.2: {}
+
   copy-anything@4.0.5:
     dependencies:
       is-what: 5.5.0
@@ -4943,6 +4998,8 @@ snapshots:
       function-bind: 1.1.2
 
   he@1.2.0: {}
+
+  hono@4.12.12: {}
 
   hookable@5.5.3: {}
 
