@@ -7,7 +7,7 @@
     "dev:web": "pnpm --filter @taskflow/web dev",
     "dev:swa": "swa start",
     "build": "pnpm --filter @taskflow/web build && pnpm --filter @taskflow/api build",
-    "deploy": "swa deploy ./apps/web/dist --api-location ./apps/api/dist --api-language node --api-version 20 --deployment-token $SWA_DEPLOYMENT_TOKEN",
+    "deploy": "node scripts/deploy.mjs",
     "test:unit": "pnpm --filter @taskflow/web test:unit",
     "test:e2e": "pnpm --filter @taskflow/web test:e2e",
     "lint": "pnpm --filter @taskflow/web lint",
