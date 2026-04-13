@@ -1,14 +1,15 @@
 {
-  "name": "api",
+  "name": "@taskflow/api",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
   "license": "ISC",
   "author": "",
-  "main": "functions/httpTrigger.js",
+  "main": "dist/functions/health.js",
   "scripts": {
-    "build": "node build.mjs",
-    "dev": "swa start http://localhost:5173 --api-location .",
+    "build": "rm -rf dist && tsc",
+    "dev": "rm -rf dist && tsc && func start",
+    "start": "func start",
     "check": "tsc --noEmit"
   },
   "dependencies": {
